@@ -13,7 +13,7 @@ from elasticsearch.exceptions import NotFoundError
 config = Config(".env")
 DEBUG = config("DEBUG", cast=bool, default=False)
 
-es = AsyncElasticsearch(["http://localhost:9200"])
+es = AsyncElasticsearch([config("ELASTICSEARCH_URL", cast=str, default="http://localhost:9200")])
 
 templates = Jinja2Templates(directory="templates")
 
