@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  elasticsearch:
+    build: ./elasticsearch
+    ports:
+      - "9200:9200"
+    volumes:
+      - ./data:/usr/share/elasticsearch/data
+    environment:
+      - discovery.type=single-node

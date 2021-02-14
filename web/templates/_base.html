@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SAGE Papers</title>
+  <link rel="stylesheet" href="/static/main.css">
+</head>
+<body>
+  <header>
+    <h1><a href="/">SAGE Papers</a></h1>
+    <div id="search-container">
+      <input type="search" id="search-box" placeholder="Search">
+    </div>
+    <div id="search-results" style="visibility:hidden"></div>
+  </header>
+  <div id="content">
+    {% block content %}{% endblock %}
+  </div>
+  <footer>
+  </footer>
+  <script src="/static/main.js"></script>
+</body>
+</html>

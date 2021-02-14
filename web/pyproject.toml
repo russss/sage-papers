@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "sage-minutes"
+version = "0.1.0"
+description = ""
+authors = ["Russ Garrett <russ@garrett.co.uk>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+uvicorn = "^0.13.3"
+elasticsearch = {extras = ["async"], version = "^7.11.0"}
+starlette = "^0.14.2"
+Jinja2 = "^2.11.3"
+aiofiles = "^0.6.0"
+python-dateutil = "^2.8.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,11 @@
+{% extends "_base.html" %}
+{% block title %}{{paper._source.title}}{% endblock %}
+{% block content -%}
+  <h2>{{paper._source.title}}</h2>
+  <p>{% if paper._source.sage_meeting %}Considered at SAGE meeting {{paper._source.sage_meeting}}
+      on {{paper._source.sage_meeting_date.date()}}.{% endif %} Published on {{paper._source.publish_date.date()}}.
+      <a href="{{paper._source.url}}">View paper</a></p>
+  {% if paper._source.attachment %}
+    <iframe src="{{url_for("paper_proxy", id=paper._id)}}" class="embed-frame"></iframe>
+  {% endif %}
+{% endblock %}

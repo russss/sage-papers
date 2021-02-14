@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+{% block content -%}
+  <h2>Recently released papers</h2>
+  <div>
+    <table>
+    {% for row in recent %}
+      <tr>
+        <td>{{row._source.publish_date.date()}}</td>
+        <td>{{(row._source.publish_date.date() - row._source.sage_meeting_date.date()).days}} days</td>
+        <td><a href="{{url_for('paper', id=row._id)}}">{{row._source.title}}</a></td>
+      </tr>
+    {% endfor %}
+    </table>
+  </div>
+  <p><a href="{{url_for('by_meeting')}}">View all papers by meeting</a></p>
+{% endblock %}

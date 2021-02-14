@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+{% block content -%}
+  <h2>By meeting</h2>
+  {% set ns = namespace(meeting=None) %}
+  {% for row in recent %}
+    {{meeting }}
+    {% if row._source.sage_meeting != ns.meeting %}
+      {% if ns.meeting != None %}
+        </ul>
+      {% endif %}
+      {% set ns.meeting = row._source.sage_meeting %}
+      {% if ns.meeting %}
+        <h3>SAGE {{ns.meeting}} ({{row._source.sage_meeting_date.date()}})</h3>
+      {% else %}
+        <h3>Other papers</h3>
+      {% endif %}
+      <ul>
+    {% endif %}
+    <li><a href="{{url_for('paper', id=row._id)}}">{{row._source.title}}</a></li>
+  {% endfor %}
+  </ul>
+{% endblock %}
