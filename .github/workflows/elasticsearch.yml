@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'elasticsearch/**'
+      - '.github/workflows/elasticsearch.yml'
 
 env:
   IMAGE_NAME: sage-papers-elasticsearch

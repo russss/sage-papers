@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'web/**'
+      - '.github/workflows/web.yml'
 
 env:
   IMAGE_NAME: sage-papers-web
