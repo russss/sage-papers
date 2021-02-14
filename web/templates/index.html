@@ -3,6 +3,11 @@
   <h2>Recently released papers</h2>
   <div>
     <table>
+      <tr>
+        <th>Published</th>
+        <th>Delay</th>
+        <th>Title</th>
+      </tr>
     {% for row in recent %}
       <tr>
         <td>{{row._source.publish_date.date()}}</td>
